@@ -12,7 +12,7 @@
 
 WD=$(dirname $0)
 
-VER=4.0.0
+VER=6.0.0
 
 SRC=rtmidi-$VER
 DEST=../libs/rtmidi
