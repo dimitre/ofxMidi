@@ -147,20 +147,23 @@ ofxMidiApi ofxBaseMidiOut::getApi() {
 }
 
 // -----------------------------------------------------------------------------
-void ofxBaseMidiOut::sendNoteOn(int channel, int pitch, int velocity) {
-	std::vector<unsigned char> message;
-	message.push_back(MIDI_NOTE_ON+(channel-1));
-	message.push_back(pitch);
-	message.push_back(velocity);
+void ofxBaseMidiOut::sendNoteOn(uint8_t channel, uint8_t pitch, uint8_t velocity) {
+	std::vector<unsigned char> message {
+		static_cast<unsigned char>(MIDI_NOTE_ON+(channel-1)),
+		pitch,
+		velocity
+	};
 	sendMessage(message);
 }
 
 // -----------------------------------------------------------------------------
-void ofxBaseMidiOut::sendNoteOff(int channel, int pitch, int velocity) {
-	std::vector<unsigned char> message;
-	message.push_back(MIDI_NOTE_OFF+(channel-1));
-	message.push_back(pitch);
-	message.push_back(velocity);
+void ofxBaseMidiOut::sendNoteOff(uint8_t channel, uint8_t pitch, uint8_t velocity) {
+	std::vector<unsigned char> message {
+		static_cast<unsigned char>(MIDI_NOTE_OFF+(channel-1)),
+		pitch,
+		velocity
+	};
+
 	sendMessage(message);
 }
 

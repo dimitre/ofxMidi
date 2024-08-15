@@ -102,8 +102,8 @@ public:
 	bool isVirtual();
 	ofxMidiApi getApi();
 	
-	void sendNoteOn(int channel, int pitch, int velocity);
-	void sendNoteOff(int channel, int pitch, int velocity);
+	void sendNoteOn(uint8_t channel, uint8_t pitch, uint8_t velocity);
+	void sendNoteOff(uint8_t channel, uint8_t pitch, uint8_t velocity);
 	void sendControlChange(int channel, int control, int value);
 	void sendProgramChange(int channel, int value);
 	void sendPitchBend(int channel, int value);

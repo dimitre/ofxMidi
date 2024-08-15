@@ -39,7 +39,7 @@ enum ofxMidiApi {
 };
 
 // MIDI status bytes
-enum MidiStatus {
+enum MidiStatus : unsigned char {
 
 	MIDI_UNKNOWN            = 0x00,
 
